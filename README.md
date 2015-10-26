@@ -13,3 +13,17 @@ A description of the data format provided by the OpenAQ platform.
 |sourceName|String|✓|ID to track measurement to source within the platform|`"Netherlands"`|
 |coordinates|Object||Location of measurement|`{"latitude": -22.087, "longitude": -70.193253}`|
 |attribution|Array||Data attribution in descending order of prominence|`[{"name": "TCEQ", "url":"http://www.tceq.state.tx.us"}, {"name": "City of Houston Health Department"}]`|
+
+## Preferred Units
+OpenAQ only accepts measurements in `µg/m³` and `ppm`. This means that volumetric concentrations reported in ppb are converted to ppm before being stored to the database. We do not convert between volumetric and mass concentrations (`µg/m³` <-> `ppm`) to avoid making assumptions.
+
+The platform also has a preferred unit of measurement per pollutant, but this is not strictly enforced. The Dutch locations, for example, report all their values in µg/m3.
+
+|Pollutant|Preferred unit|
+|---|---|
+|PM 2.5|µg/m³|
+|PM 10|µg/m³|
+|BC|µg/m³|
+|CO|ppm|
+|NO2|ppm|
+|SO2|ppm|
