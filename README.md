@@ -28,3 +28,4 @@ The platform also has a preferred unit of measurement per pollutant, but this is
 |CO|ppm|
 |NO2|ppm|
 |SO2|ppm|
+|O3|ppm|
