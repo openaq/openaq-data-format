@@ -13,7 +13,6 @@ A description of the data format provided by the OpenAQ Platform.
 |sourceName|String|✓|ID to track measurement to source within the platform|`"Netherlands"`|
 |sourceType|String|✓|The [type of source](https://github.com/openaq/openaq-data-format#source-types); acceptable values are: `government, research, other` | `"government"` |
 |mobile|Boolean|✓|Indicates whether the measuring station is stationary or mobile|`false`|
-|sourceName|String|✓|ID to track measurement to source within the platform|`"Netherlands"`|
 |coordinates|Object||Location of measurement|`{"latitude": -22.087, "longitude": -70.193253}`|
 |attribution|Array||Data attribution in descending order of prominence|`[{"name": "TCEQ", "url":"http://www.tceq.state.tx.us"}, {"name": "City of Houston Health Department"}]`|
 |averagingPeriod|Object||Information about the time resolution of the measurement|`{"value": 1, "unit": "hours"}`|
