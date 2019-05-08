@@ -1,4 +1,5 @@
 const Ajv = require('ajv');
+const jsonschema = require('jsonschema');
 const location = require('./schemas/location');
 
 const schemas = { location };
@@ -10,9 +11,7 @@ function validate (schemaName, data, options) {
     throw new Error('Schema not found');
   }
 
-  const ajv = new Ajv(options);
-  const validate = ajv.compile(schema);
-  return validate(data);
+  return jsonschema.validate(data, schema, options);
 }
 
 module.exports = {

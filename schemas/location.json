@@ -52,6 +52,15 @@
       "description": "The altitude of the location in meters",
       "examples": []
     },
+    "siteType": {
+      "type": "string",
+      "title": "Site type",
+      "description": "The type of area the location is in. Government instruments are deployed by or on behalf of governmental bodies. Research instruments are deployed by researchers affiliated with universities and/or research organizations. Other instruments are deployed by citizen scientists, often low-cost instruments",
+      "examples": [
+        "urban"
+      ],
+      "enum": ["rural", "urban", "suburban", "other"]
+    },
     "sourceType": {
       "type": "string",
       "title": "Source type",

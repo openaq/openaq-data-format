@@ -27,6 +27,7 @@ Schema defining metadata for OpenAQ locations
 | [name](#name) | `string` | **Required**  | No | Location (this schema) |
 | [notes](#notes) | `string` | Optional  | No | Location (this schema) |
 | [pollutants](#pollutants) | `enum[]` | Optional  | No | Location (this schema) |
+| [siteType](#sitetype) | `enum` | Optional  | No | Location (this schema) |
 | [sourceType](#sourcetype) | `enum` | Optional  | No | Location (this schema) |
 | `*` | any | Additional | Yes | this schema *allows* additional properties |
 
@@ -791,6 +792,36 @@ All items must be of the type:
 
 
 
+
+
+## siteType
+### Site type
+
+The type of area the location is in. Government instruments are deployed by or on behalf of governmental bodies. Research instruments are deployed by researchers affiliated with universities and/or research organizations. Other instruments are deployed by citizen scientists, often low-cost instruments
+
+`siteType`
+
+* is optional
+* type: `enum`
+* defined in this schema
+
+The value of this property **must** be equal to one of the [known values below](#sitetype-known-values).
+
+### siteType Known Values
+| Value | Description |
+|-------|-------------|
+| `rural` |  |
+| `urban` |  |
+| `suburban` |  |
+| `other` |  |
+
+
+
+### siteType Example
+
+```json
+"urban"
+```
 
 
 ## sourceType
