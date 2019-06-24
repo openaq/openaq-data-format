@@ -20,9 +20,9 @@
       "title": "Name",
       "description": "Name of a location"
     },
-    "pollutants": {
+    "parameters": {
       "type": "array",
-      "title": "Pollutants",
+      "title": "Parameters",
       "description": "Pollutants measured at a location",
       "items": {
         "type": "string",
@@ -138,7 +138,7 @@
         "required": [
           "type",
           "serialNumber",
-          "pollutants"
+          "parameters"
         ],
         "properties": {
           "type": {
@@ -161,9 +161,9 @@
             "title": "Model name",
             "description": "Model name of the instrument"
           },
-          "pollutants": {
+          "parameters": {
             "type": "array",
-            "title": "Pollutants",
+            "title": "Parameters",
             "description": "Pollutants measured by this instrument",
             "items": {
               "type": "string",
