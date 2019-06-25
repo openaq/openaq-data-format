@@ -45,6 +45,7 @@ Date the instruments were activated at this location, stored as an ISO timestamp
 
 `string`
 
+* format: `date-time` – date and time (according to [RFC 3339, section 5.6](http://tools.ietf.org/html/rfc3339))
 
 
 
@@ -291,6 +292,7 @@ Date the instruments were deactivated at this location, stored as an ISO timesta
 
 `string`
 
+* format: `date-time` – date and time (according to [RFC 3339, section 5.6](http://tools.ietf.org/html/rfc3339))
 
 
 
@@ -379,6 +381,7 @@ Date the instrument was activated at this location, stored as an ISO timestamp
 
 `string`
 
+* format: `date-time` – date and time (according to [RFC 3339, section 5.6](http://tools.ietf.org/html/rfc3339))
 
 
 
@@ -446,6 +449,7 @@ Date the instrument was deactivated at this location, stored as an ISO timestamp
 
 `string`
 
+* format: `date-time` – date and time (according to [RFC 3339, section 5.6](http://tools.ietf.org/html/rfc3339))
 
 
 

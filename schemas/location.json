@@ -75,11 +75,13 @@
     },
     "activationDate": {
       "type": "string",
+      "format": "date-time",
       "title": "Activation date",
       "description": "Date the instruments were activated at this location, stored as an ISO timestamp"
     },
     "deactivationDate": {
       "type": "string",
+      "format": "date-time",
       "title": "Deactivation date",
       "description": "Date the instruments were deactivated at this location, stored as an ISO timestamp"
     },
@@ -183,11 +185,13 @@
           },
           "activationDate": {
             "type": "string",
+            "format": "date-time",
             "title": "Instrument activation date",
             "description": "Date the instrument was activated at this location, stored as an ISO timestamp"
           },
           "deactivationDate": {
             "type": "string",
+            "format": "date-time",
             "title": "Instrument deactivation date",
             "description": "Date the instrument was deactivated at this location, stored as an ISO timestamp"
           },
