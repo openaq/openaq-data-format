@@ -20,16 +20,6 @@
       "title": "Name",
       "description": "Name of a location"
     },
-    "parameters": {
-      "type": "array",
-      "title": "Parameters",
-      "description": "Pollutants measured at a location",
-      "items": {
-        "type": "string",
-        "title": "Pollutant type",
-        "enum": ["pm25", "pm10", "co", "bc", "so2", "no2", "o3"]
-      }
-    },
     "city": {
       "type": "string",
       "title": "City",
@@ -45,12 +35,6 @@
       "examples": [
         "US"
       ]
-    },
-    "altitude": {
-      "type": "integer",
-      "title": "Altitude",
-      "description": "The altitude of the location in meters",
-      "examples": []
     },
     "siteType": {
       "type": "string",
