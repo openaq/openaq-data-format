@@ -16,7 +16,6 @@ Schema defining metadata for OpenAQ locations
 |----------|------|----------|----------|------------|
 | [activationDate](#activationdate) | `string` | Optional  | No | Location (this schema) |
 | [active](#active) | `boolean` | Optional  | No | Location (this schema) |
-| [altitude](#altitude) | `integer` | Optional  | No | Location (this schema) |
 | [attribution](#attribution) | `object[]` | Optional  | No | Location (this schema) |
 | [city](#city) | `string` | Optional  | No | Location (this schema) |
 | [coordinates](#coordinates) | `object` | Optional  | No | Location (this schema) |
@@ -26,7 +25,6 @@ Schema defining metadata for OpenAQ locations
 | [instruments](#instruments) | `object[]` | **Required**  | No | Location (this schema) |
 | [name](#name) | `string` | **Required**  | No | Location (this schema) |
 | [notes](#notes) | `string` | Optional  | No | Location (this schema) |
-| [pollutants](#pollutants) | `enum[]` | Optional  | No | Location (this schema) |
 | [siteType](#sitetype) | `enum` | Optional  | No | Location (this schema) |
 | [sourceType](#sourcetype) | `enum` | Optional  | No | Location (this schema) |
 | `*` | any | Additional | Yes | this schema *allows* additional properties |
@@ -68,28 +66,6 @@ Whether the location is currently active
 
 
 `boolean`
-
-
-
-
-
-## altitude
-### Altitude
-
-The altitude of the location in meters
-
-`altitude`
-
-* is optional
-* type: `integer`
-* defined in this schema
-
-### altitude Type
-
-
-`integer`
-
-
 
 
 
@@ -380,7 +356,7 @@ All items must be of the type:
 | `measurementStyle`| string | Optional |
 | `modelName`| string | Optional |
 | `notes`| string | Optional |
-| `pollutants`| array | **Required** |
+| `parameters`| array | **Required** |
 | `rawFrequency`| integer | Optional |
 | `reportingFrequency`| integer | Optional |
 | `serialNumber`| string | **Required** |
@@ -594,18 +570,18 @@ Any relevant notes about the instrument
 
 
 
-#### pollutants
-##### Pollutants
+#### parameters
+##### Parameters
 
 Pollutants measured by this instrument
 
-`pollutants`
+`parameters`
 
 * is **required**
 * type: `enum[]`
 
 
-##### pollutants Type
+##### parameters Type
 
 
 Array type: `enum[]`
@@ -759,34 +735,6 @@ Any relevant notes about the location
 
 
 `string`
-
-
-
-
-
-
-
-## pollutants
-### Pollutants
-
-Pollutants measured at a location
-
-`pollutants`
-
-* is optional
-* type: `enum[]`
-* defined in this schema
-
-### pollutants Type
-
-
-Array type: `enum[]`
-
-All items must be of the type:
-`string`
-
-
-
 
 
 
