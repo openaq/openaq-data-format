@@ -18,7 +18,8 @@
     "name": {
       "type": "string",
       "title": "Name",
-      "description": "Name of a location"
+      "description": "Name of a location",
+      "minLength": 1
     },
     "city": {
       "type": "string",
@@ -121,6 +122,7 @@
       "items": {
         "type": "object",
         "title": "Instrument",
+        "minItems": 1,
         "required": [
           "type",
           "serialNumber",
@@ -130,12 +132,14 @@
           "type": {
             "type": "string",
             "title": "Type",
-            "description": "The type of instrument"
+            "description": "The type of instrument",
+            "minLength": 1,
           },
           "serialNumber": {
             "type": "string",
             "title": "Serial number",
-            "description": "Serial number of the instrument"
+            "description": "Serial number of the instrument",
+            "minLength": 1,
           },
           "manufacturer": {
             "type": "string",
@@ -151,6 +155,7 @@
             "type": "array",
             "title": "Parameters",
             "description": "Pollutants measured by this instrument",
+            "minItems": 1,
             "items": {
               "type": "string",
               "title": "Pollutant type",
