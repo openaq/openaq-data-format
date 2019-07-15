@@ -1,0 +1,2 @@
+# Schemas
+- [Location](./location.md)

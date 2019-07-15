@@ -1,0 +1,27 @@
+{
+  "name": "openaq-data-format",
+  "version": "0.0.0",
+  "description": "schema and documentation of openaq data",
+  "main": "index.js",
+  "scripts": {
+    "build": "jsonschema2md -d schemas -o docs -n --schema-out=- -e json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openaq/openaq-data-format.git"
+  },
+  "keywords": [
+    "openaq"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/openaq/openaq-data-format/issues"
+  },
+  "homepage": "https://github.com/openaq/openaq-data-format#readme",
+  "dependencies": {
+    "jsonschema": "^1.2.4"
+  },
+  "devDependencies": {
+    "@adobe/jsonschema2md": "^2.0.0"
+  }
+}

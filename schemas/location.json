@@ -1,0 +1,217 @@
+{
+  "type": "object",
+  "title": "Location",
+  "description": "Schema defining metadata for OpenAQ locations",
+  "required": [
+    "id",
+    "name",
+    "instruments"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "title": "ID",
+      "description": "ID for a location",
+      "examples": [],
+      "pattern": "^(.*)$"
+    },
+    "name": {
+      "type": "string",
+      "title": "Name",
+      "description": "Name of a location",
+      "minLength": 1
+    },
+    "city": {
+      "type": "string",
+      "title": "City",
+      "description": "The city of the location",
+      "examples": [
+        "Seattle"
+      ]
+    },
+    "country": {
+      "type": "string",
+      "title": "Country",
+      "description": "The country of the location",
+      "examples": [
+        "US"
+      ]
+    },
+    "siteType": {
+      "type": "string",
+      "title": "Site type",
+      "description": "The type of area the location is in. Government instruments are deployed by or on behalf of governmental bodies. Research instruments are deployed by researchers affiliated with universities and/or research organizations. Other instruments are deployed by citizen scientists, often low-cost instruments",
+      "examples": [
+        "urban"
+      ],
+      "enum": ["rural", "urban", "suburban", "other"]
+    },
+    "sourceType": {
+      "type": "string",
+      "title": "Source type",
+      "description": "The source of the instruments at the location. Government instruments are deployed by or on behalf of governmental bodies. Research instruments are deployed by researchers affiliated with universities and/or research organizations. Other instruments are deployed by citizen scientists, often low-cost instruments",
+      "examples": [
+        "government"
+      ],
+      "enum": ["government", "research", "other"]
+    },
+    "coordinates": {
+      "type": "object",
+      "title": "Coordinates",
+      "description": "Lat/Lon coordinates",
+      "required": [
+        "latitude",
+        "longitude"
+      ],
+      "properties": {
+        "latitude": {
+          "type": "number",
+          "title": "Latitude"
+        },
+        "longitude": {
+          "type": "number",
+          "title": "Longitude"
+        }
+      }
+    },
+    "activationDate": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Activation date",
+      "description": "Date the instruments were activated at this location, stored as an ISO timestamp"
+    },
+    "deactivationDate": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Deactivation date",
+      "description": "Date the instruments were deactivated at this location, stored as an ISO timestamp"
+    },
+    "active": {
+      "type": "boolean",
+      "title": "Active",
+      "description": "Whether the location is currently active"
+    },
+    "notes": {
+      "type": "string",
+      "title": "Notes",
+      "description": "Any relevant notes about the location"
+    },
+    "attribution": {
+      "type": "array",
+      "title": "Attributions",
+      "description": "Data attribution in descending order of prominence",
+      "items": {
+        "type": "object",
+        "title": "Attribution",
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Attribution Name"
+          },
+          "url": {
+            "type": "string",
+            "title": "Attribution Url"
+          }
+        }
+      }
+    },
+    "instruments": {
+      "type": "array",
+      "title": "Instruments",
+      "description": "An array of instruments installed at this location",
+      "items": {
+        "type": "object",
+        "title": "Instrument",
+        "minItems": 1,
+        "required": [
+          "type",
+          "serialNumber",
+          "parameters"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "title": "Type",
+            "description": "The type of instrument",
+            "minLength": 1,
+          },
+          "serialNumber": {
+            "type": "string",
+            "title": "Serial number",
+            "description": "Serial number of the instrument",
+            "minLength": 1,
+          },
+          "manufacturer": {
+            "type": "string",
+            "title": "Manufacturer",
+            "description": "Manufacturer of the instrument"
+          },
+          "modelName": {
+            "type": "string",
+            "title": "Model name",
+            "description": "Model name of the instrument"
+          },
+          "parameters": {
+            "type": "array",
+            "title": "Parameters",
+            "description": "Pollutants measured by this instrument",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "title": "Pollutant type",
+              "enum": ["pm25", "pm10", "co", "bc", "so2", "no2", "o3"]
+            }
+          },
+          "rawFrequency": {
+            "type": "integer",
+            "title": "Raw frequency",
+            "description": "The raw sampling frequency of the instrument in milliseconds"
+          },
+          "reportingFrequency": {
+            "type": "integer",
+            "title": "Reporting frequency",
+            "description": "The reporting sampling frequency of the instrument in milliseconds"
+          },
+          "measurementStyle": {
+            "type": "string",
+            "title": "Measurement style",
+            "description": "How measurements are taken",
+            "enum": ["automated", "manual", "unknown"]
+          },
+          "calibrationProcedures": {
+            "type": "string",
+            "title": "Calibration procedures",
+            "description": "Instrument-specific calibration procedures"
+          },
+          "inletHeight": {
+            "type": "integer",
+            "title": "Inlet height",
+            "description": "Height of intake inlet in meters"
+          },
+          "activationDate": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Instrument activation date",
+            "description": "Date the instrument was activated at this location, stored as an ISO timestamp"
+          },
+          "deactivationDate": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Instrument deactivation date",
+            "description": "Date the instrument was deactivated at this location, stored as an ISO timestamp"
+          },
+          "active": {
+            "type": "boolean",
+            "title": "Active",
+            "description": "Whether the location is currently active"
+          },
+          "notes": {
+            "type": "string",
+            "title": "Notes",
+            "description": "Any relevant notes about the instrument"
+          }
+        }
+      }
+    }
+  }
+}
