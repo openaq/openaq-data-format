@@ -96,6 +96,11 @@
       "title": "Notes",
       "description": "Any relevant notes about the location"
     },
+    "coordinateError": {
+      "type": "boolean",
+      "title": "Coordinate Error",
+      "description": "Select if there is a problem with existing coordinates. Please describe solution in the notes section."
+    },
     "attribution": {
       "type": "array",
       "title": "Attributions",
