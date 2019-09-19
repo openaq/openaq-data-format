@@ -94,7 +94,7 @@
     "notes": {
       "type": "string",
       "title": "Notes",
-      "description": "Any relevant notes about the location"
+      "description": "Relevant notes about the location including coordinate errors."
     },
     "coordinateError": {
       "type": "boolean",
