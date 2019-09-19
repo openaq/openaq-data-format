@@ -94,7 +94,12 @@
     "notes": {
       "type": "string",
       "title": "Notes",
-      "description": "Any relevant notes about the location"
+      "description": "Relevant notes about the location including coordinate errors."
+    },
+    "coordinateError": {
+      "type": "boolean",
+      "title": "Coordinate Error",
+      "description": "Select if there is a problem with existing coordinates. Please describe solution in the notes section."
     },
     "attribution": {
       "type": "array",
