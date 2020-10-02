@@ -5,7 +5,7 @@ A description of the data format provided by the OpenAQ Platform.
 |---|---|:---:|---|---|
 |parameter|String|✓|The measured parameter; acceptable values are `pm25, pm10, co, bc, so2, no2, o3`|`"pm25"`|
 |location|String|✓|Unique location name of the station|`"Escuela E-10"`|
-|city|String|✓|City (or regional approximation) containing location|`"Tocopilla"`|
+|city|String||City (or regional approximation) containing location|`"Tocopilla"`|
 |country|String|✓|Country containing location in two letter ISO format|`"CL"`|
 |value|Number|✓|Recorded value|`10.2`|
 |unit|String|✓|Unit of measurement, see [note about units](https://github.com/openaq/openaq-data-format#preferred-units) below; acceptable values are `µg/m³, ppm`|`"µg/m³"`|
@@ -13,9 +13,13 @@ A description of the data format provided by the OpenAQ Platform.
 |sourceName|String|✓|ID to track measurement to source within the platform|`"Netherlands"`|
 |sourceType|String|✓|The [type of source](https://github.com/openaq/openaq-data-format#source-types); acceptable values are: `government, research, other` | `"government"` |
 |mobile|Boolean|✓|Indicates whether the measuring station is stationary or mobile|`false`|
-|coordinates|Object||Location of measurement|`{"latitude": -22.087, "longitude": -70.193253}`|
-|attribution|Array||Data attribution in descending order of prominence|`[{"name": "TCEQ", "url":"http://www.tceq.state.tx.us"}, {"name": "City of Houston Health Department"}]`|
-|averagingPeriod|Object||Information about the time resolution of the measurement|`{"value": 1, "unit": "hours"}`|
+|coordinates|Object|✓|Location of measurement|`{"latitude": -22.087, "longitude": -70.193253}`|
+|attribution|Array|✓|Data attribution in descending order of prominence|`[{"name": "TCEQ", "url":"http://www.tceq.state.tx.us"}, {"name": "City of Houston Health Department"}]`|
+|averagingPeriod|Object|✓|Information about the time resolution of the measurement|`{"value": 1, "unit": "hours"}`|
+
+### Formatted Data Object
+The formatted data object should look something like this:
+```{"date":{"utc":"2020-10-01T00:00:00.000Z","local":"2020-10-01T04:00:00+04:00"},"parameter":"pm25","value":20,"unit":"µg/m³","averagingPeriod":{"value":1,"unit":"hours"},"location":"US Diplomatic Post: Abu Dhabi","city":"Abu Dhabi","country":"AE","coordinates":{"latitude":24.424399,"longitude":54.433746},"attribution":[{"name":"EPA AirNow DOS","url":"http://airnow.gov/index.cfm?action=airnow.global_summary"}],"sourceName":"StateAir_AbuDhabi","sourceType":"government","mobile":false}```
 
 ### Dates and date ranges
 Dates are stored as a javascript date containing both the local time and the UTC time.
