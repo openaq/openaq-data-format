@@ -18,8 +18,16 @@ A description of the data format provided by the OpenAQ Platform.
 |averagingPeriod|Object|✓|Information about the time resolution of the measurement|`{"value": 1, "unit": "hours"}`|
 
 ### Formatted Data Object
-The formatted data object should look something like this:
-```{"date":{"utc":"2020-10-01T00:00:00.000Z","local":"2020-10-01T04:00:00+04:00"},"parameter":"pm25","value":20,"unit":"µg/m³","averagingPeriod":{"value":1,"unit":"hours"},"location":"US Diplomatic Post: Abu Dhabi","city":"Abu Dhabi","country":"AE","coordinates":{"latitude":24.424399,"longitude":54.433746},"attribution":[{"name":"EPA AirNow DOS","url":"http://airnow.gov/index.cfm?action=airnow.global_summary"}],"sourceName":"StateAir_AbuDhabi","sourceType":"government","mobile":false}```
+The formatted data json object should look something like this:
+```json
+{"date":{"utc":"2020-10-01T00:00:00.000Z","local":"2020-10-01T04:00:00+04:00"},
+  "parameter":"pm25","value":20,"unit":"µg/m³",
+  "averagingPeriod":{"value":1,"unit":"hours"},
+  "location":"US Diplomatic Post: Abu Dhabi","city":"Abu Dhabi","country":"AE",
+  "coordinates":{"latitude":24.424399,"longitude":54.433746},
+  "attribution":[{"name":"EPA AirNow DOS","url":"http://airnow.gov/index.cfm?action=airnow.global_summary"}],
+  "sourceName":"StateAir_AbuDhabi","sourceType":"government","mobile":false}
+```
 
 ### Dates and date ranges
 Dates are stored as a javascript date containing both the local time and the UTC time.
