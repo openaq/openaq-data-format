@@ -2,6 +2,8 @@
 
 A description of the data format for uploading data using the OpenAQ Data Upload tool
 
+The live tool can be found at [upload.openaq.org](https://upload.openaq.org)
+
 |Column Name|Type|Required|Description|Example|
 |---|---|:---:|---|---|
 |parameter|String|✓|The measured parameter; acceptable values are `pm25, pm10, co, bc, so2, no2, o3`|`pm25`|
@@ -12,13 +14,12 @@ A description of the data format for uploading data using the OpenAQ Data Upload
 |unit|String|✓|Unit of measurement, see [note about units](https://github.com/openaq/openaq-data-format#preferred-units) below; acceptable values are `µg/m³, ppm`|`µg/m³`|
 |date_utc|String|✓|Time of measurement for UTC time. See [note about dates](https://github.com/openaq/openaq-data-format#dates-and-date-ranges).|`2015-10-26T17:00:00.000Z`|
 |date_local|String|✓|Time of measurement for local time time. See [note about dates](https://github.com/openaq/openaq-data-format#dates-and-date-ranges).|`2015-10-26T14:00:00-03:00`|
-|sourceName|String|✓|ID to track measurement to source within the platform|`Netherlands`|
-|sourceType|String|✓|The [type of source](https://github.com/openaq/openaq-data-format#source-types); acceptable values are: `government, research, other` | `government` |
+|sourceType|String|✓|The [type of source](https://github.com/openaq/openaq-data-format#source-types); acceptable values are: `government, research` | `government` |
 |mobile|Boolean|✓|Indicates whether the measuring station is stationary or mobile|`false`|
 |coordinates_latitude|Number|✓|Latitude of measurement|`-22.087`|
 |coordinates_longitude|Number|✓|Longitude of measurement|`-70.193253`|
-|attribution_name|String|✓|Data attribution name for the attribution|`TCEQ`|
-|attribution_url|String|✓|Data attribution url for the attribution|`"http://www.tceq.state.tx.us`|
+|attribution_name|String|✓|Name for the  is the entity that is responsible for the data.|`TCEQ`|
+|attribution_url|String|✓|URL for the entity that is responsible for the data.|`"http://www.tceq.state.tx.us`|
 |averagingPeriod_value|Number|✓|Information about the time resolution value|`1`|
 |averagingPeriod_unit|String|✓|Information about the time resolution unit of the measurement|`hours`|
 
@@ -66,7 +67,6 @@ Measurements can be provided by different types of sources:
 
 - `government` - Sensors that are deployed by or on behalf of governmental bodies.
 - `research` - Sensors that are deployed by researchers affiliated with universities and/or research organizations.
-- `other` - Sensors that are deployed by citizen scientists, often low-cost sensors.
 
 ## Attributions
 
@@ -81,13 +81,20 @@ This is to give credit to the entity responsible for producing the data. For exa
 Column: `attribution_name`, Value: `"TCEQ"`
 Column: `attribution_url`, Value: `"http://www.tceq.state.tx.us`
 
-#### Example of multiple attributions being sent using the `_1` or `_2` method
+#### Example of multiple attributions being sent using the `attribution_name_2` or `attribution_url_2` method. **note** the number starts on "2" for additional attributes.
+
+First attribute: 
 
 Column: `attribution_name`, Value: `"TCEQ"`
 Column: `attribution_url`, Value: `"http://www.tceq.state.tx.us`
 
+
+Second attribute: 
+
 Column: `attribution_name_2`, Value: `"TCEQ 2"`
 Column: `attribution_url_2`, Value: `"http://www.tceq.state.tx.us/2`
+
+Third attribute:
 
 Column: `attribution_name_3`, Value: `"TCEQ 3"`
 Column: `attribution_url_3`, Value: `"http://www.tceq.state.tx.us/3`
